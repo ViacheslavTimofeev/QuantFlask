@@ -30,6 +30,12 @@ def login():
     return render_template('login.html',  title='Sign In', form=form)
 
 
-@app.route('/zebra')
-def zebra():
-    return render_template('zebra.html')
+@app.route('/personal')
+def personal():
+    return render_template('personal.html')
+
+
+@app.route('/filler')
+def filler():
+    return render_template('filler.html')
+
