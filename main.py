@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from config import Config
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
@@ -28,8 +28,18 @@ def about():
     return render_template('about.html',  title='About')
 
 
-@app.route('/certificate')
+@app.route('/certificate', methods=['post', 'get'])
 def certificate():
+    d1=0
+    d2=0
+    if request.method == 'POST':
+        username = request.form.get('username')  # запрос к данным формы
+        print(username)
+        d1 = request.form.get('date1')
+        d2 = request.form.get('date2')
+        print(d1)
+        print(d2)
+
     return render_template('certificate.html')
 
 
