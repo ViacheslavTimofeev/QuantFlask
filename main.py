@@ -4,6 +4,8 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
 from flask import render_template
+import sys
+from genSert import func
 
 
 class LoginForm(FlaskForm):
@@ -37,6 +39,7 @@ def certificate():
         print(username)
         d1 = request.form.get('date1')
         d2 = request.form.get('date2')
+        func(username, d1, d2)
         print(d1)
         print(d2)
 
