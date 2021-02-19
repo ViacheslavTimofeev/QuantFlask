@@ -34,31 +34,15 @@ def certificate():
     d1 = 0
     d2 = 0
     if request.method == 'POST':
-        username = request.form.get('username')  # запрос к данным формы
-        print(username)
+        username = request.form.get('username')  # запрос к данным форм)
         d1 = request.form.get('date1')
         d2 = request.form.get('date2')
         func(username, d1, d2)
-        print(d1)
-        print(d2)
+
+
 
     return render_template('certificate.html')
 
-
-@app.route('/contenteditable', methods=['post', 'get'])
-def content():
-    d3 = 0
-    d4 = 0
-    if request.method == 'POST':
-        username1 = request.form.get('username1')  # запрос к данным формы
-        print(username1)
-        d3 = request.form.get('date3')
-        d4 = request.form.get('date4')
-        func(username1, d3, d4)
-        print(d3)
-        print(d4)
-
-    return render_template('contenteditable.html')
 
 
 @app.route('/coming')
