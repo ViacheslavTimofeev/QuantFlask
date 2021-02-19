@@ -45,16 +45,16 @@ def certificate():
     return render_template('certificate.html')
 
 
-@app.route('/smth', methods=['post', 'get'])
-def smth():
+@app.route('/contenteditable', methods=['post', 'get'])
+def content():
     d3 = 0
     d4 = 0
     if request.method == 'POST':
-        course = request.form.get('course')  # запрос к данным формы
-        print(course)
+        username1 = request.form.get('username1')  # запрос к данным формы
+        print(username1)
         d3 = request.form.get('date3')
         d4 = request.form.get('date4')
-        func(course, d3, d4)
+        func(username1, d3, d4)
         print(d3)
         print(d4)
 
